@@ -80,7 +80,15 @@ var Engine = (function(global) {
      * on the entities themselves within your app.js file).
      */
     function update(dt) {
-        
+
+        // check for collisions between player and enemies
+        game.allEnemies.forEach(function(enemy) {
+            if ((enemy.x <= (game.player.x + 60) && enemy.x >= (game.player.x -60)) && enemy.y === game.player.y){
+                game.player.setback();
+                game.playSound('collision');
+            }
+        })
+
         updateEntities(dt);
 
         // if browser window size is too small to fit canvas, a red border surrounding the canvas alerts the user to resize the window

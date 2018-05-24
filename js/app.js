@@ -5,6 +5,7 @@ app.js
  * Game objects, levels, dialogs, and events
 */
 
+'use strict';
 
 //// ENEMIES
 // Moving objects our player must avoid
@@ -36,11 +37,6 @@ class Enemy {
         // Reset enemy position when enemy moves off screen
         if (this.x >= ctx.canvas.width) {
             this.resetPos();
-        }
-        // Handle collisions with player
-        if ((this.x <= (game.player.x + 60) && this.x >= (game.player.x - 60)) && this.y === game.player.y) {
-            game.player.setback();
-            game.playSound('collision');
         }
     }
 
@@ -510,7 +506,7 @@ let game = {
         // create list of all x-y positions
         let xyFree = [];
         for (let col of cols) {
-            for (row of rows) {
+            for (let row of rows) {
                 let xy = [col, row];
                 xyFree.push(xy);
             }
