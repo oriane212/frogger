@@ -3,6 +3,8 @@ Frogger
 
 The object of the game is to make it across without getting hit by enemies. Collect tokens along the way to earn points!
 
+[Play the game!](https://oriane212.github.io/frogger/)
+
 ![alt text](docs/frogger1small.gif)
 
 ## Dependencies
